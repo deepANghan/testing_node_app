@@ -17,3 +17,8 @@ app.post('/sum', (req, res) => {
 
 });
 
+app.get('/', (req, res) => {
+
+    res.end('<h1>this is intial render</h1>');
+
+});
