@@ -1,0 +1,29 @@
+name: My first github actions
+
+on :
+    push:
+        branches:
+           - main
+
+    pull_request:
+            branches:
+                - main
+
+jobs :
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: seting node js
+            uses: actions/setup-node@v1
+            with:
+                node-version: '23.x'
+
+          - name: Checkout repository
+            uses: actions/checkout@v3 # clone the repo into runner
+
+          - name: install dependencies
+            run: npm
+
+          - name: run test
+            run: npm test
